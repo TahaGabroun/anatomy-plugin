@@ -61,20 +61,26 @@ function walk(directory) {
   });
 }
 const exported = walk(skillRoot).map(file => path.relative(skillRoot, file).split(path.sep).join('/')).sort();
-assert.deepEqual(exported, Object.keys(snapshot.sha256).sort(), 'Skill file set differs from source snapshot');
+const currentHashes = snapshot.adaptation_sha256 || snapshot.sha256;
+assert.deepEqual(exported, Object.keys(currentHashes).sort(), 'Skill file set differs from current adaptation snapshot');
 for (const relative of exported) {
   const digest = createHash('sha256').update(fs.readFileSync(path.join(skillRoot, relative))).digest('hex');
-  assert.equal(digest, snapshot.sha256[relative], `Changed or damaged skill file: ${relative}`);
+  assert.equal(digest, currentHashes[relative], `Changed or damaged skill file: ${relative}`);
+}
+const adaptedBaselineFiles = new Set(['SKILL.md', 'references/chatgpt-runtime.md', 'references/upstream.md', 'evals/evals.json', 'agents/openai.yaml']);
+for (const [relative, expected] of Object.entries(snapshot.sha256)) {
+  if (adaptedBaselineFiles.has(relative)) continue;
+  assert.equal(currentHashes[relative], expected, `Original resource changed: ${relative}`);
 }
 assert.equal(snapshot.upstream.repository, 'https://github.com/wheresryan22/anatomy');
 assert.equal(snapshot.upstream.license, manifest.license);
 assert.match(snapshot.upstream.revision, /^[a-f0-9]{40}$/);
 
 const examples = fs.readdirSync(path.join(skillRoot, 'examples'), { withFileTypes: true }).filter(item => item.isDirectory());
-assert.equal(examples.length, 8);
+assert.equal(examples.length, 9);
 const programs = [...walk(skillRoot), ...walk(path.join(root, 'scripts'))].filter(file => /\.(mjs|js)$/.test(file));
 for (const file of programs) {
   const checked = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
   assert.equal(checked.status, 0, `${path.relative(root, file)}: ${checked.stderr}`);
 }
-console.log(`Plugin validation passed: ${exported.length} unchanged skill files, ${examples.length} examples, ${programs.length} JavaScript syntax checks.`);
+console.log(`Plugin validation passed: ${exported.length} adaptation files, preserved original resources, ${examples.length} examples, ${programs.length} JavaScript syntax checks.`);

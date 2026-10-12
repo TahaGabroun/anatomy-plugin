@@ -7,8 +7,9 @@ This is an unofficial plugin export of [Ryan's Anatomy](https://github.com/where
 ## Included
 
 - One reusable `anatomy` skill, with the full drawing kit and reference guides.
-- Eight examples, including a dial indicator, desk computer, rocket engine, ripple tank, and turning dial.
-- Geometry audits and portable browser verification helpers.
+- Eight original examples, plus an animal-cell specimen with focus views and an RNA/protein sequence.
+- Geometry audits, portable browser helpers, and an optional static SVG renderer.
+- Gallery-based visual acceptance and scientific cutaway guidance: actual volume, purposeful detail, and motion that changes the mechanism.
 - A portable Agent Plugins manifest, a Codex compatibility manifest, and a repository marketplace.
 - ChatGPT/Codex guidance for standalone HTML, SVG, in-chat previews, and React/Next.js output.
 
@@ -50,8 +51,9 @@ Other examples:
 - Explain a token bucket using a physical mechanism with live readouts.
 - Create an interactive isometric explanation of a differential gear.
 - Build a detailed cache-key explainer as a pin-tumbler lock.
+- Explain an animal cell with useful organelle close-ups and a protein-production sequence.
 
-The skill is intended for technical mechanism illustrations. Its name refers to explaining how things work; medical atlas and diagnostic tasks fall outside its scope.
+The skill supports technical mechanisms and schematic scientific structures. Its name refers to explaining how things work; medical atlas and diagnostic tasks fall outside its scope.
 
 ## Requirements and checks
 
@@ -65,7 +67,7 @@ npm run smoke
 npm run package
 ```
 
-Validation checks manifests, local paths, license preservation, the source snapshot, and JavaScript syntax. The smoke check builds both themes of two examples in an isolated temporary directory, leaving the bundled resources unchanged. Packaging creates `anatomy-plugin-0.1.0.zip` next to the checkout.
+Validation checks manifests, local paths, license preservation, the source snapshot, and JavaScript syntax. The smoke check builds both themes of the dial indicator, desk computer and animal cell in an isolated temporary directory, leaving the bundled resources unchanged. Packaging creates `anatomy-plugin-0.2.0.zip` next to the checkout.
 
 These checks verify packaging and standalone builds. Actual pointer, keyboard, layout, reduced-motion, and WebGL behavior still require the browser checks described in the skill. An operating-system restriction may prevent headless Chrome from launching; report that limitation instead of claiming browser verification.
 
@@ -78,11 +80,11 @@ These checks verify packaging and standalone builds. Actual pointer, keyboard, l
 | `.agents/plugins/marketplace.json` | Repository marketplace pointing to this package |
 | `skills/anatomy/` | Complete adapted skill and drawing resources |
 | `assets/icon.svg` | Plugin icon, copied from the installed skill |
-| `source-snapshot.json` | SHA-256 hashes of the exported skill files |
+| `source-snapshot.json` | Pinned baseline hashes and SHA-256 hashes of the current adaptation |
 | `scripts/` | Distribution validation, smoke builds, and ZIP packaging |
 
 ## Attribution and license
 
-The original drawing kit, examples, guides, and tests are by **Ryan (@wheresryan22)**. The upstream snapshot is commit `240a9bf7c50cc6226148762a1017466fcbc08523`, dated 2026-10-11. This export retains the current ChatGPT/Codex adaptation, including runtime guidance and portable browser detection.
+The original drawing kit, examples, guides, and tests are by **Ryan (@wheresryan22)**. The upstream snapshot is commit `240a9bf7c50cc6226148762a1017466fcbc08523`, dated 2026-10-11. This export retains the current ChatGPT/Codex adaptation, including runtime guidance, portable browser detection, gallery-based craft guidance, and a biological specimen example. The original kit and eight examples retain their baseline bytes.
 
 The plugin is distributed under the [MIT license](LICENSE). Preserve that notice when redistributing the kit or copied example code. Detailed provenance is in `skills/anatomy/references/upstream.md`.

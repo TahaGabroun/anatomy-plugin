@@ -1,6 +1,6 @@
 {
   "name": "anatomy-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Anatomy plugin distribution for ChatGPT and Codex",

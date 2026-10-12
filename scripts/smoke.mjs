@@ -10,9 +10,9 @@ const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'anatomy-plugin-smoke-')
 try {
   const skill = path.join(temporary, 'anatomy');
   fs.cpSync(path.join(root, 'skills', 'anatomy'), skill, { recursive: true });
-  for (const example of ['dial-indicator', 'desk-computer']) {
+  for (const example of ['dial-indicator', 'desk-computer', 'animal-cell']) {
     for (const light of [false, true]) {
-      const command = [`examples/${example}/build.mjs`, ...(light ? ['--light'] : [])];
+      const command = [`examples/${example}/build.mjs`, ...(light ? ['--light'] : []), ...(example === 'animal-cell' ? ['--check'] : [])];
       const result = spawnSync(process.execPath, command, { cwd: skill, encoding: 'utf8', timeout: 120000 });
       assert.equal(result.status, 0, `${command.join(' ')}: ${result.stderr || result.error || result.stdout}`);
       const output = path.join(skill, 'examples', example, `${example}${light ? '-light' : ''}.html`);

@@ -1,21 +1,29 @@
 {
   "name": "anatomy",
-  "version": "0.1.0",
-  "description": "Create detailed interactive isometric explanations with crafted SVG mechanisms.",
+  "version": "0.2.0",
+  "description": "Create detailed interactive isometric mechanisms and scientific cutaways with meaningful process motion.",
   "author": {
     "name": "Anatomy contributors"
   },
   "license": "MIT",
   "repository": "https://github.com/TahaGabroun/anatomy-plugin",
-  "keywords": ["anatomy", "isometric", "svg", "interactive", "education"],
+  "keywords": [
+    "anatomy",
+    "isometric",
+    "svg",
+    "interactive",
+    "education"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Anatomy",
     "shortDescription": "Craft interactive isometric technical illustrations",
-    "longDescription": "Explain technical concepts through detailed physical mechanisms. Includes the Anatomy drawing kit, eight examples, geometry audits, accessible motion, and ChatGPT/Codex runtime guidance.",
+    "longDescription": "Explain mechanisms and scientific structures with detailed geometry, focus views and process motion. Includes the original Anatomy kit and eight examples, an animal-cell specimen, gallery-based quality guidance, accessible controls, audits and honest runtime checks.",
     "developerName": "Anatomy contributors",
     "category": "Productivity",
-    "capabilities": ["Interactive"],
+    "capabilities": [
+      "Interactive"
+    ],
     "defaultPrompt": [
       "Use Anatomy to create an interactive isometric explanation of a four-stroke combustion engine.",
       "Use Anatomy to explain how a token bucket limits requests."
