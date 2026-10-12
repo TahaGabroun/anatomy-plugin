@@ -1,0 +1,16 @@
+{
+  "name": "anatomy-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Anatomy plugin distribution for ChatGPT and Codex",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "package": "node scripts/validate.mjs && python3 scripts/package.py"
+  }
+}

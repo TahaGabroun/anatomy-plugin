@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "anatomy",
+  "version": "0.1.0",
+  "description": "Create detailed interactive isometric explanations with crafted SVG mechanisms.",
+  "author": {
+    "name": "Anatomy contributors"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/TahaGabroun/anatomy-plugin",
+  "keywords": ["anatomy", "isometric", "svg", "interactive", "education"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Anatomy",
+        "shortDescription": "Craft interactive isometric technical illustrations",
+        "longDescription": "Explain technical concepts through detailed physical mechanisms. Includes the Anatomy drawing kit, eight examples, geometry audits, accessible motion, and ChatGPT/Codex runtime guidance.",
+        "developerName": "Anatomy contributors",
+        "category": "Productivity",
+        "capabilities": ["Interactive"],
+        "defaultPrompt": [
+          "Use Anatomy to create an interactive isometric explanation of a four-stroke combustion engine.",
+          "Use Anatomy to explain how a token bucket limits requests."
+        ],
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      }
+    }
+  }
+}
