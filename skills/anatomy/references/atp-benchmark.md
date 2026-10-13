@@ -41,3 +41,8 @@ When revising an interactive artifact, compare old/new in the same browser at ma
 Require an identifiable mitochondrial membrane, distinct membrane-embedded c-ring and stationary half-channel structure, a γ shaft connected to the rotor, a peripheral stalk supporting a fixed α₃β₃ head, and three visually inspectable β pockets. Expose both assembled and cutaway/isolated modes; show 120° binding-change stepping and model-consistent readouts. The head remains stationary as rotor/shaft turn. The complex's intermembrane-side orientation and proton path must be unambiguous; the path is **two non-continuous half-channels**, never a straight transmembrane tunnel. If the user asks for another organism, c-ring stoichiometry must be changed or explicitly labelled illustrative rather than silently applying mammalian c₈ everywhere.
 
 Do not assert that the bundled exemplar satisfies every criterion without testing; its inclusion documents what the user preferred visually, not a certified mechanism.
+
+
+## Protected v0.6 hybrid benchmark (v0.7)
+
+In addition to the older v0.5-era benchmark, the user-approved organic/hybrid ATP implementation is preserved byte-for-byte at `../benchmarks/atp-synthase/v06/ATP_Synthase_Anatomy_v06.html`. See [non-regression](benchmark-nonregression.md). **It remains a procedural representation**, not a deposited coordinate model. New experimentally grounded views should complement and improve it, never silently relabel the procedural baseline as atomic structure.

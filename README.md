@@ -1,6 +1,24 @@
-# Anatomy for ChatGPT and Codex — v0.6.0
+# Anatomy for ChatGPT and Codex — v0.7.0
 
 An unofficial ChatGPT/Codex adaptation of [Ryan’s Anatomy](https://github.com/wheresryan22/anatomy), with the original MIT attribution preserved. Creates detailed interactive isometric illustrations of real mechanisms, including scientific cutaways and mechanism-led animations. It is **not** a diagnostic imaging system or clinical anatomy atlas.
+
+## What changed in v0.7.0
+
+- **Experimental-coordinate workflow implemented:** new `skills/anatomy/tools/structure_import.py` imports PDB files with Python's standard library and PDBx/mmCIF with optional `gemmi`, including direct wwPDB/PDBj assembly download on a network-connected computer. It exports real Cα/P backbone coordinates, chain identity, retrieval/source-file SHA-256, method and reported resolution when present. It does **not** fabricate coordinates on download failure.
+- **Offline experimental backbone viewer:** `skills/anatomy/examples/structure-viewer/structure-viewer.html` renders an interactive 3D projection of imported coordinates, supports orbit, zoom and chain inspection, and explicitly distinguishes source-verified vs local/unverified files. A backbone viewer is *not* a solvent-accessible surface or a time-resolved molecular dynamics simulation.
+- **Locked approved v0.6 ATP synthase benchmark:** `skills/anatomy/benchmarks/atp-synthase/v06/ATP_Synthase_Anatomy_v06.html` is byte-for-byte preserved with a pinned SHA-256; smoke checks confirm its unchanged source and core controls. The v0.6 model remains procedurally drawn and its animation remains illustrative, not retrospectively called atomistically grounded.
+- **Evidence-aware instructions and regression cases:** new guides for experimental assemblies, structural provenance, motion claims and independent visual non-regression review. Automated checks verify contracts; human/browser review remains necessary for visual equivalence.
+
+### Using human ATP synthase structure 8H9S
+
+On a **network-connected machine**, install optional `gemmi`, download the author-defined biological assembly, and export backbone positions:
+
+```sh
+python3 -m pip install gemmi
+python3 skills/anatomy/tools/structure_import.py --fetch-id 8H9S --assembly 1 --output atp-8h9s-backbone.json
+```
+
+Open `skills/anatomy/examples/structure-viewer/structure-viewer.html` in a browser and select that JSON. The 8H9S coordinates are **not bundled** in this version because the structural archive could not be retrieved in this execution environment. See [experimental structures](skills/anatomy/references/experimental-structures.md) and [source provenance](skills/anatomy/references/provenance-and-disclosure.md). Source record: [RCSB 8H9S](https://www.rcsb.org/structure/8H9S) and [PDBj assembly download](https://pdbj.org/mine/resources/8h9s).
 
 ## What changed in v0.6.0
 
@@ -51,11 +69,11 @@ npm run smoke
 npm run package
 ```
 
-`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the model tests, ATP benchmark contract, and adaptive-mode evaluation fixture integrity (not a claim that an AI model passed those prompts). Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
+`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the model tests, the locked v0.6 ATP benchmark, the structural parser tests and adaptive-mode evaluation fixture integrity (not a claim that an AI model passed those prompts). Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
 
 ## Layout
 
-- `skills/anatomy/` — complete v0.6.0 skill, example source/output (including ATP benchmark), kit, references, and tests.
+- `skills/anatomy/` — complete v0.7.0 skill, example source/output, v0.6 ATP benchmark, real-coordinate importer/viewer, kit, references, and tests.
 - `plugin.json`, `.codex-plugin/plugin.json` — portable plugin and compatibility metadata.
 - `.agents/plugins/marketplace.json` — local marketplace registry.
 - `source-snapshot.json` — hashes of this distribution for integrity verification.

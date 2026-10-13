@@ -1,6 +1,6 @@
 {
   "name": "anatomy",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Automatically choose biological molecular, mechanistic engineered, or hybrid interactive visualizations for scientific explanations.",
   "author": {
     "name": "Anatomy contributors"

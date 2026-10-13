@@ -1,6 +1,6 @@
 {
   "name": "anatomy-plugin",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "type": "module",
   "description": "Anatomy skill distribution for ChatGPT and Codex",

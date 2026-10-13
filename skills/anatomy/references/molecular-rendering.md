@@ -50,3 +50,8 @@ Also label motion independently: `experimentally sampled conformers`, `model-der
 ## Reference visual characteristics and limitations
 
 A user-supplied October 2026 video of a **Claude-generated ATP synthase explanation** showed a detailed multicolour, irregular protein complex, a separately legible mechanical interpretation and a reveal/comparison interaction. The motion **appeared** to combine rotary movement with conformational changes. This is an *appearance and pedagogy reference*, not evidence of atomic-coordinate provenance, accurate kinetics, or scientific validity. **The video is not bundled or redistributed**. The existing `examples/atp-synthase/atp-synthase.html` is a strong prior *engineering-style and interaction* baseline, **not a ceiling for biological molecular appearance**. Don't let its largely neutral shading override appropriate organic surfaces and subunit-specific colour. Preserve its useful component inspection and cutaways when building a more biological version.
+
+
+## Runnable experimental-coordinate pathway (v0.7)
+
+The experimental workflow and safety limitations are specified in [experimental structures](experimental-structures.md), with a runnable parser at `../tools/structure_import.py` and a standalone point/trace explorer. **Citing 8H9S is not the same as rendering 8H9S coordinates.** The v0.6 ATP benchmark remains procedural and frozen. Distinguish a measured 3D backbone from a computed molecular surface and distinguish an experimentally observed conformation from animated interpolation. See [provenance](provenance-and-disclosure.md) and [locked ATP benchmark](benchmark-nonregression.md).

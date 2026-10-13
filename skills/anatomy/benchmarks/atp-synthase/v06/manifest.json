@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "ATP-SYNTHASE-V06-LOCKED",
+  "version": "0.6.0",
+  "status": "APPROVED_VISUAL_AND_INTERACTION_BASELINE",
+  "not_experimental_coordinates": true,
+  "source_file": "ATP_Synthase_Anatomy_v06.html",
+  "source_sha256": "364ddb139d4a8eb4923c315714a7755b76884133f41022bf442b4f25fb44bbbd",
+  "source_bytes": 39212,
+  "artifacts_not_bundled": [
+    "original user-provided Claude reference video"
+  ],
+  "gates": [
+    "organic protein rendering",
+    "consistent chain colours",
+    "rotor/shaft/catalytic-state synchronization",
+    "protein/compare/machine representations",
+    "cutaway and separation",
+    "named component inspector",
+    "mobile and desktop interaction",
+    "geometry and motion provenance"
+  ]
+}
