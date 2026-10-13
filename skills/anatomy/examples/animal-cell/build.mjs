@@ -5,6 +5,7 @@ import * as k from '../../kit/iso-kit.mjs';
 import { kitScript } from '../../scripts/inline-kit.mjs';
 import {W,H,P,art,structures,journey,targets,items} from './parts.mjs';
 import {processPose,STAGE_COUNT,STAGE_SECONDS} from './model.mjs';
+import {validateProcess} from './validate.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url)),theme=process.argv.includes('--light')?'light':'dark';
 const why={
@@ -26,7 +27,7 @@ const why={
  'Watch the RNA strand appear beside chromatin. The illustration does not turn DNA into a travelling protein.',
  'The RNA strand crosses the nuclear envelope at a pore; no cargo vesicle leaves the nucleus.',
  'The message arrives at a ribosome. A new chain grows on the other side of the ER membrane.',
- 'The chain becomes a compact cargo shape. A surrounding carrier buds from the ER in this simplified cutaway.',
+ 'The chain becomes compact cargo. The RNA stays at the translation site and fades from emphasis; the fade does not represent its destruction. Carrier formation is schematic.',
  'A membrane now surrounds the cargo as it travels between the ER and the receiving face of the Golgi.',
  'Delivery removes the incoming carrier. Processing and sorting precede formation of an outgoing carrier.',
  'The closed carrier approaches the cell surface with its soluble cargo still enclosed.',
@@ -53,16 +54,8 @@ let html=k.pageHtml({title:'Inside an Animal Cell — Anatomy',theme,body,script
 html=html.replace('<!doctype html>',`<!doctype html>\n<!--\n${fs.readFileSync(path.join(here,'../../LICENSE'),'utf8')}\n-->`);
 const file=path.join(here,'animal-cell'+(theme==='light'?'-light':'')+'.html');fs.writeFileSync(file,html);
 if(process.argv.includes('--check')){
- for(let stage=0;stage<STAGE_COUNT;stage++)for(const p of [0,.25,.5,.75,1]){
-  const pose=processPose(stage,p);
-  if(!pose.point.every(Number.isFinite)||pose.carrier<0||pose.carrier>1||pose.rna<0||pose.rna>1)throw new Error('Invalid process pose');
-  if(stage<2&&pose.cargo!==0)throw new Error('Protein shown during RNA-only stages');
- }
- for(let stage=0;stage<STAGE_COUNT-1;stage++){
-  const a=processPose(stage,1).point,b=processPose(stage+1,0).point;
-  if(Math.hypot(...a.map((x,i)=>x-b[i]))>1e-8)throw new Error('Discontinuous stage boundary '+stage);
- }
+ validateProcess();
  for(const part of items){if(!part.center.every(Number.isFinite))throw new Error('Invalid compartment position');}
- console.log('Animal-cell model checks passed: finite poses, RNA/protein distinction, continuous stage positions. Biological schematic; engineering support audit not claimed.');
+ console.log('Animal-cell model checks passed: finite poses, RNA/protein distinction, stage positions and rendered opacity continuity. Does not validate compartment containment or membrane topology. Biological schematic; engineering support audit not claimed.');
 }
 console.log(file);

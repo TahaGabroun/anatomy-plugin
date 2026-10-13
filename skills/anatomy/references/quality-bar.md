@@ -1,10 +1,12 @@
 # Quality bar from the Claude gallery
 
-Read this before choosing the composition or interaction. Keep the original kit and its light palette; do not replace its material ramps with broad foreground/background mixes.
+Read `gallery-lessons.md` for observed examples and the design/completion gates. Use this checklist during visual acceptance. Keep the original kit and its light palette; do not replace its material ramps with broad foreground/background mixes.
 
 ## Benchmarks
 
-Inspect the finished drawing and its response to input, not only the page description. These are original, public Anatomy creations by Claude, identified by the author:
+Treat gallery links as optional visual references. If access fails, use the bundled examples and state what was actually inspected. Do not delay a build indefinitely to fetch a benchmark.
+
+Inspect the finished drawing and its response to input, not only the page description. These are public Anatomy creations credited to Claude by the author. Refer to `gallery-lessons.md` for what was actually inspected and the limits of those observations:
 
 | Example | What to study | Transfer to a new subject |
 | --- | --- | --- |
@@ -13,7 +15,7 @@ Inspect the finished drawing and its response to input, not only the page descri
 | [Binary search](https://skills.wheresryan.sh/anatomy/collection/binary-search) | A balance compares the sample to a middle weight; eliminated weights sink into seats | Put the reasoning in the object, so the outcome is visible before the caption is read |
 | [Raptor engine](../examples/raptor-engine/raptor-engine-light.html) | Rounded profiles, pipe routing, registered effects, and an audited exploded view | Preserve surface continuity and occlusion at close range |
 
-Read the author's [making-of](https://skills.wheresryan.sh/anatomy/how-i-built-it) for the original failure-and-repair examples. Preserve the pinned local kit; gallery inspection is a design benchmark, not permission to silently upgrade dependencies or copy a finished object.
+When available, consult the author's [making-of](https://skills.wheresryan.sh/anatomy/how-i-built-it) for the original failure-and-repair examples. Preserve the pinned local kit; gallery inspection is a design benchmark, not permission to silently upgrade dependencies or copy a finished object.
 
 ## Decide what the picture must prove
 
@@ -24,7 +26,7 @@ Before geometry, write four short answers in the task notes:
 3. What does the primary interaction physically change?
 4. What does the same model update in the motion, selected state, and readout?
 
-For an abstract concept, invent the physical mechanism. For a real engine, cell, molecule, or instrument, model its actual structure. Do not force a biological subject onto a machine base merely because the example has one.
+For an abstract concept, invent the physical mechanism. For a real engine, cell, molecule, or instrument, model its actual structure. Do not force a biological subject onto a machine base merely because the example has one. The legacy animal-cell example does not meet this target: do not copy its tray-like silhouette or global process overlay.
 
 ## Reject these outputs before polishing
 
@@ -49,7 +51,7 @@ Compare a render directly with the closest benchmark. Name concrete faults in th
 
 ## Make interaction do explanatory work
 
-Use one primary mechanism per view. Couple the state to all visible consequences. For example:
+Use one coherent explanatory mechanism per view; several coupled moving assemblies may be necessary. Couple the state to all visible consequences. For example:
 
 - Pressure raises a plunger and moves its gauge needle.
 - Winding changes the spring reserve and the watch keeps time from that reserve.
@@ -65,3 +67,11 @@ Distinguish a schematic teaching sequence from measured physics or biological ki
 Keep build/logic checks, geometry checks, visual checks, and browser checks separate. A static renderer can inspect SVG art. A DOM adapter can inspect event-handler state transitions. Neither proves real browser layout, keyboard behavior, pointer hit testing, or WebGL.
 
 If a browser is blocked, retain the failure and use the available static/geometry checks. Do not weaken the checks, bypass the restriction, or present that fallback as a complete browser pass. Keep the result useful and state the specific limitation.
+
+## Professional finish
+
+Use a consistent spacing and type scale, aligned control groups, concise sentence-case labels, and stable-width numeric readouts with units. Avoid fake interface text, redundant badges, and unexplained abbreviations. Use native controls with visible hover, focus, active and disabled states; retain readable contrast and generous touch targets (aim for about 44 CSS px where practical).
+
+At 390 CSS px, inspect the actual visual footprint, not just the viewport setting: text must remain readable, controls wrap without clipping, and the mechanism keeps a usable focus view. Check browser zoom and long labels. Do not shrink the whole interface to fit a fixed card. A smooth surface, deliberate whitespace, or a simpler mechanism can be the professionally finished result.
+
+Follow `accuracy.md` for claims and `dynamic-animation.md` for motion. Inspect requested themes and every additional theme actually shipped; do not expand a single-theme task solely to satisfy an old gallery convention.

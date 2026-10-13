@@ -1,7 +1,7 @@
 {
   "name": "anatomy",
-  "version": "0.2.0",
-  "description": "Create detailed interactive isometric mechanisms and scientific cutaways with meaningful process motion.",
+  "version": "0.4.0",
+  "description": "Create polished interactive isometric diagrams and mechanism-led scientific explainers with accuracy, motion, and visual verification.",
   "author": {
     "name": "Anatomy contributors"
   },
@@ -12,21 +12,22 @@
     "isometric",
     "svg",
     "interactive",
-    "education"
+    "education",
+    "scientific-visualization"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Anatomy",
-    "shortDescription": "Craft interactive isometric technical illustrations",
-    "longDescription": "Explain mechanisms and scientific structures with detailed geometry, focus views and process motion. Includes the original Anatomy kit and eight examples, an animal-cell specimen, gallery-based quality guidance, accessible controls, audits and honest runtime checks.",
+    "shortDescription": "Craft interactive isometric mechanism explainers",
+    "longDescription": "Illustrate real mechanisms and scientific structures with carefully constructed geometry, process-led animation, accessibility, scientific accuracy, visual comparisons, and evidence-based evaluation. Includes the original Anatomy kit and examples.",
     "developerName": "Anatomy contributors",
     "category": "Productivity",
     "capabilities": [
       "Interactive"
     ],
     "defaultPrompt": [
-      "Use Anatomy to create an interactive isometric explanation of a four-stroke combustion engine.",
-      "Use Anatomy to explain how a token bucket limits requests."
+      "Use Anatomy to create an interactive isometric explanation of ATP synthase.",
+      "Create an interactive isometric explanation of a four-stroke combustion engine."
     ],
     "composerIcon": "./assets/icon.svg",
     "logo": "./assets/icon.svg"

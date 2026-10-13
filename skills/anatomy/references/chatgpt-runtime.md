@@ -4,7 +4,7 @@
 
 Use the skill's resolved local directory, not a hardcoded Claude path. If the skill is supplied through `skills.read`, use its returned `skill_root` when present. Otherwise locate the installed `anatomy/SKILL.md` in the skill workspace. Resolve `kit/`, `scripts/`, `references/`, and `examples/` relative to that directory. For a provider-backed reference, use its advertised read mechanism rather than treating a `skill://` URI as a filesystem path.
 
-Read `quality-bar.md` and `craft.md` before designing and `kit.md` for API details. Read the closest example's build script, not every example at once. Load `webgl.md`, `3d.md`, or `react.md` only for the chosen output mode.
+Read `accuracy.md` and `gallery-lessons.md` before designing; use `quality-bar.md` when reviewing; read `dynamic-animation.md` for interactive output and `craft.md` for geometry and `kit.md` for API details. Choose a construction-quality reference and a relevant controller example separately. The smallest example is a runtime smoke test, not the default visual ceiling. Read only the selected build/model/controller resources. Load `webgl.md`, `3d.md`, or `react.md` only for the chosen output mode.
 
 ## Build outside the installed skill
 
@@ -12,7 +12,7 @@ Treat the installed skill as a read-only dependency. Copy the required `kit/`, `
 
 Use the available `node`, or `CODEX_PRIMARY_RUNTIME_NODE` if Node is exposed through that runtime. Require Node 20.10 or newer. The kit and its browser checks use built-in modules; an API key, an AI SDK, and package installation are unnecessary. React output additionally needs the target project's React tooling.
 
-For the first smoke check in the copied directory, run:
+When checking the runtime itself, the following optional smoke check uses the smallest example. For ordinary figure work, build and check the actual requested figure directly:
 
 ```sh
 node examples/dial-indicator/build.mjs
@@ -45,6 +45,6 @@ If Chrome reports an operating-system permission error, including a blocked sock
 
 Check that a static renderer supports CSS custom properties. If it turns the art into black silhouettes, resolve the chosen theme's `--anatomy-*` properties in a disposable SVG render copy. Keep the original page and drawing kit unchanged, and identify the result as a static SVG check.
 
-At minimum, check desktop and 390-pixel layouts, both themes, one real pointer interaction, keyboard operation, reduced motion, and clean browser output. Inspect every screenshot you generate with the available image-viewing tool. Add close-ups and all relevant audit checks described in `verify.md`; use WebGL-disabled checks for shaders and the orbit checks for moving 3D geometry. A failed check calls for a geometry or behavior fix, not a relaxed tolerance or an invented passing result.
+For interactive output, check desktop and 390-pixel layouts, all shipped themes, one real pointer interaction, keyboard operation, reduced motion, and clean browser output. Inspect every screenshot you generate with the available image-viewing tool. Add close-ups and all relevant audit checks described in `verify.md`; use WebGL-disabled checks for shaders and the orbit checks for moving 3D geometry. A failed check calls for a geometry or behavior fix, not a relaxed tolerance or an invented passing result.
 
 Run long checks asynchronously so progress remains visible. Match claims to what was actually tested and preserve the original kit's limits, including the experimental status of its 3D mode.

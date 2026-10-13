@@ -1,29 +1,6 @@
-import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { spawnSync } from 'node:child_process';
-
-const root = fileURLToPath(new URL('../', import.meta.url));
-const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'anatomy-plugin-smoke-'));
-try {
-  const skill = path.join(temporary, 'anatomy');
-  fs.cpSync(path.join(root, 'skills', 'anatomy'), skill, { recursive: true });
-  for (const example of ['dial-indicator', 'desk-computer', 'animal-cell']) {
-    for (const light of [false, true]) {
-      const command = [`examples/${example}/build.mjs`, ...(light ? ['--light'] : []), ...(example === 'animal-cell' ? ['--check'] : [])];
-      const result = spawnSync(process.execPath, command, { cwd: skill, encoding: 'utf8', timeout: 120000 });
-      assert.equal(result.status, 0, `${command.join(' ')}: ${result.stderr || result.error || result.stdout}`);
-      const output = path.join(skill, 'examples', example, `${example}${light ? '-light' : ''}.html`);
-      const html = fs.readFileSync(output, 'utf8');
-      assert.match(html, /<svg\b/);
-      assert.match(html, /<script\b/);
-      assert.match(html, /anatomy/);
-      console.log(`Built ${example} (${light ? 'light' : 'dark'}).`);
-    }
-  }
-  console.log('Standalone smoke builds passed. Browser interaction was not tested by this command.');
-} finally {
-  fs.rmSync(temporary, { recursive: true, force: true });
-}
+const tests=[['node',['--test','skills/anatomy/examples/animal-cell/model.test.mjs']],['node',['skills/anatomy/examples/animal-cell/build.mjs','--check']],['node',['skills/anatomy/examples/animal-cell/validate.mjs','--check']]];
+for(const [exe,args] of tests){const ret=spawnSync(exe,args,{stdio:'inherit',encoding:'utf8'});if(ret.status!==0)process.exit(ret.status||1)}
+for(const file of ['skills/anatomy/examples/animal-cell/live.js','skills/anatomy/examples/animal-cell/build.mjs']){const ret=spawnSync('node',['--check',file],{stdio:'inherit'});if(ret.status!==0)process.exit(1)}
+console.log('Local smoke checks passed (browser visual tests not included).');

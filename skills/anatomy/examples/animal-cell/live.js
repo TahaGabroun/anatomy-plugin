@@ -42,6 +42,8 @@
   const pose=CELL_MODEL.timelinePose(seconds),p=coordinates(pose.point);
   const place='translate('+p[0].toFixed(2)+' '+p[1].toFixed(2)+')';
   for(const el of [rna,chain,cargo,carrier,neck])el.setAttribute('transform',place);
+  // RNA stays at the translation site while emphasis transfers to the folded protein.
+  if(pose.rnaPoint){const q=coordinates(pose.rnaPoint);rna.setAttribute('transform','translate('+q[0].toFixed(2)+' '+q[1].toFixed(2)+')');}
   const rn=pose.rna;
   rna.setAttribute('opacity',String(rn));rna.setAttribute('d','M-12 -8 Q-9 -15 -6 -8 T0 -8 T6 -8 T12 -8');
   chain.setAttribute('opacity',String(pose.chain));
@@ -65,9 +67,10 @@
  }
  function tick(time){
   if(!visible||document.hidden){frame=0;last=0;return;}
-  const dt=last?Math.min(.05,(time-last)/1000):0;last=time;
+  const elapsed=last?Math.max(0,(time-last)/1000):0;last=time;
+  const dt=Math.min(.05,elapsed); // Clamp camera easing, not the process clock.
   if(playing&&!still.matches){
-   seconds=Math.min(CELL_MODEL.STAGE_SECONDS*CELL_MODEL.STAGE_COUNT,seconds+dt);
+   seconds=Math.min(CELL_MODEL.STAGE_SECONDS*CELL_MODEL.STAGE_COUNT,seconds+elapsed);
    const stage=CELL_MODEL.timelinePose(seconds).stage;
    if(stage!==index){index=stage;update();}
    if(seconds>=CELL_MODEL.STAGE_SECONDS*CELL_MODEL.STAGE_COUNT){playing=false;update();}
@@ -98,7 +101,7 @@
   const dark=document.body.dataset.theme!=='dark';document.body.dataset.theme=dark?'dark':'light';e.currentTarget.textContent=dark?'Light theme':'Dark theme';
  });
  root.querySelectorAll('[data-org]').forEach(el=>el.addEventListener('click',event=>{event.stopPropagation();if(mode!=='structures')switchMode('structures');select(structures.findIndex(e=>e.id===el.dataset.org));}));
- new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible)render();else{cancelAnimationFrame(frame);frame=0;last=0;}}).observe(svg);
+ new IntersectionObserver(entries=>{visible=entries[entries.length-1].isIntersecting;if(visible)render();else{cancelAnimationFrame(frame);frame=0;last=0;}}).observe(svg);
  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;last=0;}else render();});
  still.addEventListener('change',()=>{playing=false;update();render();});
  update();render();

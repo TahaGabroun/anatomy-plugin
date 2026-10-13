@@ -10,7 +10,7 @@ export function processPose(index,progress){
  if(index===0)return {...common,point:rnaOrigin,rna:p};
  if(index===1)return {...common,point:blendPoint(rnaOrigin,pore,p),rna:1};
  if(index===2)return {...common,point:blendPoint(pore,ribosome,smooth(Math.min(1,p/.35))),rna:1-p*.65,chain:smooth(Math.max(0,(p-.3)/.7))};
- if(index===3)return {...common,point:blendPoint(ribosome,er,smooth(Math.min(1,p/.35))),chain:1-p,fold:p,cargo:1,carrier:smooth(Math.max(0,(p-.42)/.58))};
+ if(index===3)return {...common,point:blendPoint(ribosome,er,smooth(Math.min(1,p/.35))),rna:.35*(1-smooth(Math.min(1,p/.3))),rnaPoint:ribosome,chain:1-p,fold:p,cargo:1,carrier:smooth(Math.max(0,(p-.42)/.58))};
  if(index===4)return {...common,point:bezier(er,[-47,52,30],[18,48,27],cis,p),carrier:1,cargo:1,fold:1};
  if(index===5)return {...common,point:blendPoint(cis,trans,p),cargo:1,fold:1,carrier:1-smooth(Math.min(1,p/.25))+smooth(Math.max(0,(p-.65)/.35))};
  if(index===6)return {...common,point:bezier(trans,[106,23,34],[120,55,17],dock,p),cargo:1,fold:1,carrier:1};

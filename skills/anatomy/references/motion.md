@@ -1,15 +1,17 @@
 # Motion and interaction
 
+Read `dynamic-animation.md` first for playback state, simulation clocks, lifecycle, and verification. The snippets below are implementation sketches, not complete controllers; add visibility handling and teardown in the actual host.
+
 A figure is alive when its mechanism moves the way the real thing would: a carriage glides and settles, a spring overshoots once, a needle swings to the new reading. Motion should be calm enough to follow and true to the model.
 
 ## Principles
-- **Time-based.** Take `dt` from `requestAnimationFrame` timestamps and clamp it to 1/30 s so a background tab doesn't jump. Never step a fixed amount per frame.
-- **Ease toward targets.** Pointer and keyboard set a *target*, and the part follows with exponential easing (`x += (target − x)·(1 − e^(−dt/τ))`, τ = 0.1–0.3 s) or a spring. Parts never snap to the cursor.
+- **Time-based.** Take elapsed time from `requestAnimationFrame`. Reset the timestamp after hidden/offscreen suspension. Clamp only visual-easing integration if needed; use an explicit simulation clock or fixed-step accumulator for domain rates. See `dynamic-animation.md`. Never step a fixed amount per frame.
+- **Ease toward targets.** Pointer and keyboard set a *target*, and the part follows with exponential easing (`x += (target − x)·(1 − e^(−dt/τ))`, τ = 0.1–0.3 s) or a spring. Direct manipulation should track promptly; use easing only when it improves legibility without concealing actual state. Reduced-motion inspection may snap to a meaningful pose.
 - **Real springs where the subject is springy.** Use stiffness and damping from the real model, sub-stepped about 240 times a second for stability. Snap to the target once both error and velocity fall below 5e-4.
 - **One loop per figure.** A single `tick(dt)` updates the model, then writes the DOM through refs: `setAttribute("transform" | "d")`, `textContent`, `dataset`. Don't re-render React per frame.
 - **Stop when settled or offscreen.** Use an `IntersectionObserver` with rootMargin `120px 0px`, and read the newest entry (`entries[entries.length - 1]`): when the stage leaves and comes back between two callbacks, one callback delivers both entries oldest first, and reading the first one leaves the figure frozen on screen. Stop the loop once everything has reached its target.
 - **Reduced motion.** When `prefers-reduced-motion: reduce` is set, jump to targets with no tour, flow or pulse. The figure must still respond to input.
-- **Idle tour.** When nobody is interacting, play a scripted loop after about 1.4 s that shows the point of the figure. Pause it on hover, focus or press, and resume about 3.6 s after the last interaction. The tour drives the same targets the user would.
+- **Idle tour.** Optional, with a visible pause control. Stop on deliberate interaction; do not restart after explicit pause or while controls retain focus. The tour drives the same model as user input. See `dynamic-animation.md` for state ownership.
 - **Readout updates live** from the same model, in true units and short: `block 2 · reads 14.0 px`, `120.0 × 32.0 · lean 10.6 px`. Read it from where the parts are, not from the target: the Raptor says `taking apart` or `closing up` while any spring is moving or pending, and only then `apart · 11 assemblies` or `1,630 kg · cold`. Take a phase word and the number beside it from the same instant of the same source: a blind-test bench printed `end of stroke · relief 85 bar` (the word from the model, the number from a gauge needle lagging 0.25 s behind it) although its relief valve cracks at 92, and `idle · 44 bar` just after retracting.
 
 ## Pointer
@@ -24,6 +26,8 @@ A figure is alive when its mechanism moves the way the real thing would: a carri
 - The `<svg>` carries `role="img"` and an `aria-label` describing the object and what it shows.
 
 ## Vanilla loop (framework-free)
+
+This loop illustrates eased presentation only. Its clamped `dt` is not a clock for real-unit rates; the full controller must handle hidden state, user pause, and cleanup. Initialize touring only when an optional demo is appropriate.
 ```js
 let frame = 0, last = 0, visible = false, touring = !still.matches, clock = 0;
 function tick(now) {
@@ -77,7 +81,7 @@ export function RigLive(props: { base: React.ReactNode; carriage: React.ReactNod
 `examples/test-rig/live.tsx` is the full production version, with springs, a tour, press and pull, keyboard handling and aria.
 
 ## Shapes that change
-When a part changes shape rather than position (a swelling capsule, a compressing spring, a needle turning), rebuild only its paths each frame with the kit, using `slabOf`, `coil` or `lineOnTop`, and write them to its paths: `fill`, `shades[0..3]`, `top`, `crease`, `bevel`, `outline`. One solid costs well under 0.1 ms. Measure it: a frame should stay under about 1 ms of script.
+When a part changes shape rather than position (a swelling capsule, a compressing spring, a needle turning), rebuild only its paths each frame with the kit, using `slabOf`, `coil` or `lineOnTop`, and write them to its paths: `fill`, `shades[0..3]`, `top`, `crease`, `bevel`, `outline`. One solid costs well under 0.1 ms. Measure it: profile the actual scene and report frame-time measurements rather than assuming a fixed script budget.
 - **Precomputed frames step.** A lever drawn from 41 prebuilt frames over ±15° moved its knob about 0.8 px per frame, visible in slow motion. Rebuild a rotating part each frame, or precompute enough frames that one step moves nothing more than 0.25 px.
 - **A rod that slides out of a gland** doesn't change shape: it is one full-length rod that moves, clipped at the gland face by a clip that stays put (`G.rodOut`, `holdStill`, `craft.md`, section 3). Never draw it as several overlapping copies.
 

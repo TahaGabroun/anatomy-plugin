@@ -1,3 +1,7 @@
+# Verification scope
+
+Use the checks appropriate to the artifact and report actual coverage. Numerical geometry checks sample recorded shapes and poses; they are not proofs of domain accuracy or continuous collision freedom. Verify all shipped themes, rather than adding unrequested deliverables for a theme check. Read `accuracy.md` for domain tests and `dynamic-animation.md` for timing, phase boundaries, interruption, and lifecycle tests. A passing build is not a visual or browser pass.
+
 # Verify
 
 Look at the figure the way a demanding reviewer would, before anyone else does. Rendering it is cheap, and guessing is expensive.
