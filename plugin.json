@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "anatomy",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Create polished interactive isometric diagrams and mechanism-led scientific explainers with accuracy, motion, and visual verification.",
   "author": {
     "name": "Anatomy contributors"

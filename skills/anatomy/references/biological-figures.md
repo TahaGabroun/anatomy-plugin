@@ -61,6 +61,10 @@ Inspect overview, focus poses, and representative process states at normal size 
 
 The animal-cell example illustrates a schematic presentation approach. Its model checks do not prove cargo containment, membrane continuity, accurate targeting, or phase-boundary continuity. Before reuse, inspect those properties separately. Never infer scientific validity from its inclusion in the skill. Record the sources and any omitted pathways for the actual requested subject using `accuracy.md`.
 
+## Molecular assemblies: do not turn proteins into labelled cylinders
+
+For molecular motors, preserve the assembly hierarchy: membrane-spanning elements, anchored interfaces, central rotating elements, peripheral stationary supports, and catalytic domains. Organic volumes may be schematic but should look connected, occupy coherent depth and suggest real subunit organization rather than a few generic coloured extrusions. The archived `examples/atp-synthase/atp-synthase.html` demonstrates a user-preferred approach to cutaway and part inspection. Study its **craft** with `references/atp-benchmark.md`; validate all scientific structure and kinetics separately. A picture of three colored cylinders marked O/L/T can explain a cycle but does not substitute for a requested protein cutaway.
+
 ## Geometry before selectors
 
 The supplied cell's static art was rendered and inspected during the gallery comparison. Its cytosol is represented by a broad horizontal cut-plane path; many organelles are shallow extrusions above it. This reads as objects on a tray despite the rounded lower shell. A large menu and more descriptions cannot repair that geometry.

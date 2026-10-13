@@ -4,6 +4,9 @@ Read `gallery-lessons.md` for observed examples and the design/completion gates.
 
 ## Benchmarks
 
+For a dense biological/molecular motor, inspect the bundled [ATP synthase predecessor](../examples/atp-synthase/atp-synthase.html) and [benchmark notes](atp-benchmark.md). It exemplifies fine mechanical construction and scientific-subsystem exploration preferred by a user over a later, more infographic-like revision. Treat it as a visual/interactivity benchmark, not a factual ground truth or reusable biological geometry.
+
+
 Treat gallery links as optional visual references. If access fails, use the bundled examples and state what was actually inspected. Do not delay a build indefinitely to fetch a benchmark.
 
 Inspect the finished drawing and its response to input, not only the page description. These are public Anatomy creations credited to Claude by the author. Refer to `gallery-lessons.md` for what was actually inspected and the limits of those observations:
@@ -30,6 +33,9 @@ For an abstract concept, invent the physical mechanism. For a real engine, cell,
 
 ## Reject these outputs before polishing
 
+- A dashboard-first explainer in which large cards, accent panels, and didactic lists substitute for a substantial rendered mechanism. Scientific precision does not require flat visuals.
+- A revised specimen that loses a meaningful sectional view, exploded view, detailed interface, or usable component selection found in an earlier working artifact without an explicit request to simplify.
+
 - A large flat plate with objects distributed across it. Give the subject its actual enclosure, depth, internal boundaries, and asymmetry.
 - A collection of recognisable icons without connected structure. Model how the parts meet and how material or information crosses their boundaries.
 - A dropdown that changes a paragraph while the mechanism remains unchanged. Selection may locate a structure, but the explanatory interaction must also expose, move, deform, compare, or transport something meaningful.
@@ -47,7 +53,7 @@ For an abstract concept, invent the physical mechanism. For a real engine, cell,
 
 **Phone:** preserve a useful overview and offer a native selection or focus control. Move the camera to a selected subsystem or show a larger detail when important features become too small. Do not solve a phone layout by reducing readable text or effective targets.
 
-Compare a render directly with the closest benchmark. Name concrete faults in the task notes, fix them, and render again. Do not claim parity with Claude from a successful build, syntax check, path count, or unviewed image.
+Compare a render directly with the closest benchmark. For an update, compare directly with the working predecessor and check separate poses, not just static overview images. Name concrete faults in the task notes, fix them, and render again. Do not claim parity with Claude from a successful build, syntax check, path count, or unviewed image.
 
 ## Make interaction do explanatory work
 

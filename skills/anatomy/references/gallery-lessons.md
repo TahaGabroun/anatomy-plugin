@@ -4,6 +4,9 @@ Inspection: 2026-10-13. The public gallery credits Claude, but the inspected pag
 
 ## Observed references
 
+A separate **user-supplied, locally archived ATP synthase predecessor** was judged preferable to this adaptation’s later ATP rendering in October 2026. See `atp-benchmark.md` for the comparison criteria. This is not another publicly inspected Claude gallery entry and must not be described as one.
+
+
 | Reference | What was actually inspected | Transferable decision |
 |---|---|---|
 | [Watch](https://skills.wheresryan.sh/anatomy/collection/watch) | Assembled and lifted-bridge views; slow-mode and apart commands; nested plates, fine teeth, screw slots, recesses and soft shading | Reveal the working layer without losing the enclosing object's identity. Inspection mode should expose a relationship, not simply scatter parts. |
@@ -72,6 +75,9 @@ At normal output size, establish large light/shade masses, readable silhouettes,
 Use monochrome when it serves the object. Add controlled material colour when it distinguishes brass, glass, rubber, fluid or the teaching subject; keep values, light direction, and shading consistent. A colour-coded interface still needs a non-colour cue. User branding takes precedence over the gallery palette when requested.
 
 ## Completion gates
+
+When reworking an existing illustration, use the earlier rendered artifact as a baseline. If the revision simplifies the physical model or eliminates investigative views while adding information cards, the **construction and exploration gates fail**, even if model-validation scripts pass.
+
 
 These are quality gates, not user permission gates. Iterate within the authorized task.
 

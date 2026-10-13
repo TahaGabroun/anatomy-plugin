@@ -108,6 +108,14 @@
       "prompt": "Make a small premium Anatomy mechanism explaining an easing curve. Keep the figure compact, but retain the construction quality of the gallery.",
       "expected_output": "Uses a compact scope without equating compactness with primitive construction. The actual curve determines the moving mechanism; the subject has legible thickness, attachment and finish. A small number of parts is acceptable when complete. Chooses implementation based on needed behavior, not always the shortest gauge example, and inspects a representative action and close-up.",
       "files": []
+    },
+    {
+      "id": 19,
+      "prompt": "I preferred the earlier Anatomy ATP synthase molecular model over your newer one. Improve it without losing its detailed molecular construction, whole-complex, F₀/F₁, cutaway, separation, site inspection and play/step/scrub interactions. Supply one standalone interactive HTML file and compare it visibly to the earlier version.",
+      "expected_output": "A user-instructed iteration visibly preserves or improves the bundled atp-synthase HTML geometry, part interfaces, depth, fine four-tone shading, scarce functional accents, and actual exploratory modes. Two screenshots at matching art size, theme and pose, plus cutaway, F₀ and F₁/β-site views and a changed catalytic state, are inspected; corrections are made before expanding panels. The motor and catalytic changes are coupled from one state model. Any science-specific error is repaired without replacing the constructed mechanism with a schematic dashboard. Score construction and exploration as independent noncompensatory gates using references/atp-benchmark.md; report observed regressions and actual test evidence rather than declaring visual superiority from path counts.",
+      "files": [
+        "examples/atp-synthase/atp-synthase.html"
+      ]
     }
   ]
 }

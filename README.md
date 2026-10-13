@@ -1,8 +1,15 @@
-# Anatomy for ChatGPT and Codex — v0.4.0
+# Anatomy for ChatGPT and Codex — v0.5.0
 
 An unofficial ChatGPT/Codex adaptation of [Ryan’s Anatomy](https://github.com/wheresryan22/anatomy), with the original MIT attribution preserved. Creates detailed interactive isometric illustrations of real mechanisms, including scientific cutaways and mechanism-led animations. It is **not** a diagnostic imaging system or clinical anatomy atlas.
 
-## Improvements in v0.4.0
+## What changed in v0.5.0
+
+- **Restored mechanism-first quality:** detailed, true-isometric assembly geometry, material treatment, shaded depth and meaningful contact interfaces are independent acceptance requirements, not optional decoration. Scientific clarity does not require shrinking the illustration into a dashboard.
+- **Stored a user-preferred ATP synthase predecessor** in `skills/anatomy/examples/atp-synthase/atp-synthase.html` as a visual and exploration benchmark. Its source MIT notice remains intact. It is a *design* reference, not a validated atomistic or kinetic model.
+- **Non-regression protocol:** compare the revised subject against an earlier working artifact at equivalent rendered scale/theme/pose, checking cutaways, exploded/subsystem views and visual quality separately from copy, numbers and interface polish. A worse physical model cannot be offset by more cards or explanatory text.
+- **Expanded regression checks:** benchmark structure and expected interaction affordances are checked by `npm run smoke`. Browser interaction and scientific correctness still require their own verification.
+
+## Earlier v0.4.0 improvements retained
 
 - Gallery-benchmarked construction requirements: substantial objects, meaningful joinery and interiors, material ramps, perspective and real occlusion. Compare actual rendered results with suitable references; aesthetic confidence without evidence is not a pass.
 - Explicit contracts for scientific accuracy, explanatory animation, causal continuity, visual inspection, accessibility, and honest verification reports.
@@ -40,7 +47,7 @@ npm run package
 
 ## Layout
 
-- `skills/anatomy/` — complete v0.4.0 skill, example source/output, kit, references, and tests.
+- `skills/anatomy/` — complete v0.5.0 skill, example source/output (including ATP benchmark), kit, references, and tests.
 - `plugin.json`, `.codex-plugin/plugin.json` — portable plugin and compatibility metadata.
 - `.agents/plugins/marketplace.json` — local marketplace registry.
 - `source-snapshot.json` — hashes of this distribution for integrity verification.
