@@ -87,3 +87,7 @@ These are quality gates, not user permission gates. Iterate within the authorize
 - **Finish:** compare a render to a suitable reference at similar subject size, theme and pose. Identify specific gaps in depth, interface detail, material treatment and movement, then fix the most consequential gaps and re-render.
 
 Do not require a quota of repair iterations when the output already meets the target. Do not declare gallery-level quality while a known major visual defect remains. If tooling prevents observation, identify that limitation rather than treating code assertions as visual acceptance. A benchmark is a craft target, not a guarantee of parity with its author or model.
+
+## Biological versus engineered Anatomy (2026-10-13)
+
+An additional user-supplied video of a Claude ATP synthase visualization (inspected in-session; not redistributed) displayed irregular, colourful protein-like molecular forms, animation that appeared to combine rotation and local conformation changes, and a comparison with a simplified mechanical representation. The video alone cannot establish underlying PDB provenance or physical correctness. It **does** establish a design principle: Anatomy must determine whether the user needs molecular identity, engineering abstraction, or a synchronized contrast. Refer to `representation-routing.md` and `molecular-rendering.md`. The archived ATP HTML remains useful for interaction and structural investigation but not a universal molecular aesthetic template.

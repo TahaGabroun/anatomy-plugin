@@ -1,6 +1,6 @@
 # Biological and scientific structures
 
-Read this when illustrating a cell, tissue mechanism, organelle, molecule, or other real scientific structure. Use `quality-bar.md` for the visual review. A biological figure is a schematic physical specimen, not a metaphorical factory or a clinical atlas.
+Read this when illustrating a cell, tissue mechanism, organelle, molecule, or other real scientific structure. Use `quality-bar.md` for the visual review. A biological figure depicts a biological physical specimen, not a metaphorical factory or a clinical atlas. For a molecular subject, **first choose BIOLOGICAL or HYBRID** using `representation-routing.md`, then apply `molecular-rendering.md` for molecular surfaces, assemblies, colour and conformation.
 
 ## Build the specimen, not the stand
 
@@ -8,8 +8,8 @@ Read this when illustrating a cell, tissue mechanism, organelle, molecule, or ot
 - Place structures at varied depths in that volume. Show posterior structures behind anterior ones and cut the enclosure deliberately to reveal the teaching target.
 - Use continuous rounded profiles for membrane-bound bodies. Flattened cisternae still have rounded ends and enclosed lumens; they are not shelves or metal slabs.
 - Model only intentional cut surfaces. Give each exposed lumen a distinct inner surface and a continuous boundary. Do not add openings that could be mistaken for a normal feature.
-- Keep the kit's restrained tones, real occlusion, fine linework, and soft shadows. Change geometry before adding gradients, colour, or effects.
-- Use colour sparingly for a persistent scientific distinction or one active process. Keep a stable mapping and explain it. Do not assign each organelle a decorative rainbow colour.
+- Preserve real occlusion and continuous surfaces. **Choose a suitable palette for the organism and explanatory goal**: molecular subunits often need distinct saturated yet controlled colours to track them through a conformational cycle; restrained engineered-metal shading is not a default biological style. Change geometry before adding gradients or effects.
+- Use colour purposefully for stable biological identity (chains, domains, organelles), catalytic state and active ligands. Rich subunit-specific colour is useful when tracing motion and interfaces; avoid arbitrary decorative rainbow assignment, inconsistent state colours, or relying on colour alone.
 
 Use a detailed overview and a focus pose for important internal structures. An organelle rendered three pixels wide is not a useful explanation of its internal membrane.
 
@@ -63,7 +63,7 @@ The animal-cell example illustrates a schematic presentation approach. Its model
 
 ## Molecular assemblies: do not turn proteins into labelled cylinders
 
-For molecular motors, preserve the assembly hierarchy: membrane-spanning elements, anchored interfaces, central rotating elements, peripheral stationary supports, and catalytic domains. Organic volumes may be schematic but should look connected, occupy coherent depth and suggest real subunit organization rather than a few generic coloured extrusions. The archived `examples/atp-synthase/atp-synthase.html` demonstrates a user-preferred approach to cutaway and part inspection. Study its **craft** with `references/atp-benchmark.md`; validate all scientific structure and kinetics separately. A picture of three colored cylinders marked O/L/T can explain a cycle but does not substitute for a requested protein cutaway.
+For molecular motors, preserve the assembly hierarchy: membrane-spanning elements, anchored interfaces, central rotating elements, peripheral stationary supports, and catalytic domains. Prefer structurally sourced organic surfaces where feasible; otherwise explicitly schematic, irregular continuous volumes that preserve known arrangement, coherent depth and real interface logic. Coupled conformational changes matter alongside shaft/rotor motion; do not accept simple rigid rotation as a complete organic model when binding-site changes are central. The archived `examples/atp-synthase/atp-synthase.html` demonstrates a user-preferred approach to cutaway and part inspection. Study its **craft** with `references/atp-benchmark.md`; validate all scientific structure and kinetics separately. A picture of three colored cylinders marked O/L/T can explain a *mechanical analogy* but does not substitute for a biological protein cutaway. The archived ATP benchmark preserves strong exploration interactions, **not a cap on molecular realism, colour, or movement**.
 
 ## Geometry before selectors
 

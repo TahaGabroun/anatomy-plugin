@@ -1,8 +1,16 @@
-# Anatomy for ChatGPT and Codex — v0.5.0
+# Anatomy for ChatGPT and Codex — v0.6.0
 
 An unofficial ChatGPT/Codex adaptation of [Ryan’s Anatomy](https://github.com/wheresryan22/anatomy), with the original MIT attribution preserved. Creates detailed interactive isometric illustrations of real mechanisms, including scientific cutaways and mechanism-led animations. It is **not** a diagnostic imaging system or clinical anatomy atlas.
 
-## What changed in v0.5.0
+## What changed in v0.6.0
+
+- **Adaptive visual-model selection:** biological, engineered/mechanistic or synchronized hybrid according to the real subject and the requested explanation.
+- **Organic molecular presentation:** support chain/domain surfaces, subunit-specific colours, biologically coupled conformation changes and source provenance instead of forcing all proteins into isometric metal-like solids.
+- **Renderer-appropriate workflow:** use the original Anatomy kit for engineering and suitable molecular/3D rendering when biological surfaces require it. No upstream kit replacement.
+- **New tests:** 16 semantic routing evaluation cases, five extended generation prompts, and executable checks that verify the routing spec is wired to the skill. These are *not* claimed to prove the model follows instructions.
+- **Claude reference:** observations from the user-supplied ATP synthase video inform the biological/hybrid design language; the video is not redistributed, and its structure or motion is not assumed experimentally validated.
+
+## What changed in v0.5.0 (retained)
 
 - **Restored mechanism-first quality:** detailed, true-isometric assembly geometry, material treatment, shaded depth and meaningful contact interfaces are independent acceptance requirements, not optional decoration. Scientific clarity does not require shrinking the illustration into a dashboard.
 - **Stored a user-preferred ATP synthase predecessor** in `skills/anatomy/examples/atp-synthase/atp-synthase.html` as a visual and exploration benchmark. Its source MIT notice remains intact. It is a *design* reference, not a validated atomistic or kinetic model.
@@ -29,7 +37,7 @@ The local marketplace registers an Anatomy plugin for compatible ChatGPT/Codex c
 
 ## Usage
 
-Ask: “Use Anatomy to create an interactive isometric explanation of ATP synthase.” Other scenarios: a four-stroke engine, an animal cell with true compartment geometry, a differential gear, or a ripple tank.
+Ask: “Use Anatomy to create an interactive isometric explanation of ATP synthase.” The skill should default to a **biological molecular representation** (and optionally a mechanism comparison, if it adds explanatory value) rather than defaulting to machined shapes. Other scenarios: a four-stroke engine, an animal cell with true compartment geometry, a differential gear, or a ripple tank.
 
 Review `skills/anatomy/SKILL.md` first. It routes to the relevant subguides, which are not optional acceptance criteria when applicable. A complete figure needs actual visual inspection and mechanism checks, not just a successful build.
 
@@ -43,11 +51,11 @@ npm run smoke
 npm run package
 ```
 
-`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the animal-cell model and source syntax. Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
+`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the model tests, ATP benchmark contract, and adaptive-mode evaluation fixture integrity (not a claim that an AI model passed those prompts). Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
 
 ## Layout
 
-- `skills/anatomy/` — complete v0.5.0 skill, example source/output (including ATP benchmark), kit, references, and tests.
+- `skills/anatomy/` — complete v0.6.0 skill, example source/output (including ATP benchmark), kit, references, and tests.
 - `plugin.json`, `.codex-plugin/plugin.json` — portable plugin and compatibility metadata.
 - `.agents/plugins/marketplace.json` — local marketplace registry.
 - `source-snapshot.json` — hashes of this distribution for integrity verification.

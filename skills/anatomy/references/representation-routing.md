@@ -1,0 +1,34 @@
+# Choose the visual representation from the task
+
+**This is a mandatory pre-build decision, not a default illustration style.** Anatomy explains causal mechanisms in every mode, but not every subject should be *depicted as a machine*. “Mechanistic explanation” describes the causal lesson, not a requirement for mechanical-looking geometry. Infer the most useful *representation* from the object's actual physical nature, the requested learning outcome, the audience and any source constraints.
+
+## Selection decision (use once, revisit after the first render)
+
+1. **Identify the referent and claim.** Is the user asking to recognize the real subject, examine molecular/cellular structure, or understand an abstract functional analogy? If the referent is biological and the task is to explain the actual protein, cell, tissue, organism or conformational mechanism, **default to BIOLOGICAL**, not an engineered proxy. A word such as “motor,” “pump,” “factory,” “circuit,” “gear” or “machine” in the name/metaphor does **not** flip it to mechanical.
+2. **Respect explicit visual intent.** A request for a gear-train analogy, textbook block diagram or engineering-style schematic may select MECHANISTIC, even for a protein. Clearly mark it as an analogy, retaining the biological referent and its causal limitations; if both physical identity and analogy matter, select HYBRID. A request for “molecular realism,” “organic movement,” “protein surfaces” or “real cellular anatomy” selects BIOLOGICAL even when the thing rotates like a motor.
+3. **Select the minimum representation that meets the objective.** MECHANISTIC for engineered hardware and deliberately requested analogies; BIOLOGICAL for molecular and cellular structure/function and living tissue; HYBRID when understanding depends on translating a real biological assembly into its mechanical abstraction or when the user asks for both. HYBRID does not require a side-by-side split if two synchronized overlays, a toggle or a detail inset is clearer.
+4. **Check source feasibility.** Can experimentally derived structural data support the biological fidelity requested? Consult structural resources; identify species/isoform, biological assembly and uncertainty. If data cannot be obtained, build an explicitly **schematic organic model** with the correct overall topology and preserve the organic visual language; do not silently turn the molecule into machined cylinders. Offer an optional function-focused view if it better teaches the mechanism. Never invent PDB IDs, atom coordinates, measured times or a molecular dynamics trajectory.
+5. **Write a one-line mode decision in task notes**: `Representation: BIOLOGICAL / MECHANISTIC / HYBRID. Goal: … Evidence: … Confidence / simplifications: …`. Do not burden the end user with a mandatory selector when intent is clear. Re-evaluate after viewing the first render; if the picture mischaracterizes the subject, switch modes before polishing it.
+
+| User task (examples) | Recommended mode | Reason |
+| --- | --- | --- |
+| Four-stroke combustion engine, mechanical watch, planetary gearset | **MECHANISTIC** | Assembled engineered parts, precise bearings/joints/clearances |
+| ATP synthase, kinesin, ribosome, ion channel, hemoglobin; no stated analogy | **BIOLOGICAL** | Organically shaped molecular assemblies, domain surfaces and molecular interactions; motion coupled to function |
+| “Teach ATP synthase by comparing its proton rotor to a turbine” | **HYBRID** | Protein identity matters *and* the abstraction improves explanation |
+| “Show an ATP synthase as a simple gear diagram” | **MECHANISTIC analogy** | Intent is explicitly schematic; name what is omitted |
+| Cell architecture, secretion, mitochondrion, muscle contraction | **BIOLOGICAL**, optionally a detail or process inset | Compartment continuity, flexible surfaces, domain movement |
+| Synthetic biology chip with living cells and microfluidics | **HYBRID** | Actual device precision alongside distinct biological specimen |
+| Binary search as a physical balance, token bucket machine | **MECHANISTIC analogy** | Physical construction is an invented pedagogical metaphor |
+| Tissue morphogenesis / organoid pattern | **BIOLOGICAL multiscale** | Material boundaries, changing geometry; atomistic PDB rendering is inappropriate |
+
+## Mode contracts
+
+**MECHANISTIC:** rendered parts are well engineered; true assembly contacts, clearances, material shading, fixed/moving dependencies and a precise causal sequence. Use [engineering](engineering.md), [craft](craft.md), relevant kit examples and [dynamic animation](dynamic-animation.md). Brass/steel/neutral ramps are suitable only when they fit the subject.
+
+**BIOLOGICAL:** the organism or molecular assembly looks biological at the requested scale. Use irregular, continuous protein volumes; chain/domain-specific recognizable topology; membranes when relevant; meaningful protein-protein and protein-ligand contacts; deliberate depth/occlusion and organic changes in conformation. Functional colour should *distinguish subunits and allow tracking over time*, and may be rich and varied. Avoid rainbow decoration not attached to stable structure. Read [molecular rendering](molecular-rendering.md) for molecular structures and [biological figures](biological-figures.md) for cells and higher levels. Molecular surfaces may be genuinely high-detail; a small set of labelled rods does not qualify.
+
+**HYBRID:** render the **same causal system in two complementary languages**, not two independent animations. The biological representation establishes identity; the mechanistic abstraction isolates a principle. Register rotor axis, contact plane, flow direction, states, highlighting and timing across views. Choose a reveal slider, coordinated toggle, or aligned side-by-side view when spatial comparison is valuable. Interactions (pause, scrub, select, step) must affect both consistently. Do not mistake a photo/texture crossfade for a scientifically grounded transformation. If space is limited, prioritize a complete biological view with an explicit mechanical inset.
+
+## Mode-fit acceptance
+
+Score **mode fitness separately** from accuracy, craft and interaction: does the representation match the biological/engineered nature of the referent *and* the requested instructional objective? A mechanically polished protein depiction is a representation failure if the task calls for molecular structure. A colorful irregular “living” model of an actual gearbox also fails. Changing from one mode to another can be an intentional improvement; assess regression against the correct mode, keeping useful predecessor interactions but not freezing an unsuitable geometry or palette. Provide an honest label for experimental-coordinate / experimentally informed / illustrative structures and measured / inferred / illustrative motion.

@@ -1,0 +1,101 @@
+{
+  "description": "Model evaluation prompts for semantic representation selection; not a keyword router or an executed visual evaluation.",
+  "cases": [
+    {
+      "id": "atp-default",
+      "prompt": "Use Anatomy to illustrate ATP synthase rotating and making ATP.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Actual protein structure and coupled shape changes are primary; mechanical motor naming is not a mechanical-style request."
+    },
+    {
+      "id": "organic-override",
+      "prompt": "Make the ATP synthase look and move like a living protein, not a machine.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Explicit request for coloured molecular volumes and conformations."
+    },
+    {
+      "id": "kinesin",
+      "prompt": "Animate kinesin walking on a microtubule, showing heads changing conformation.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Biological motor remains molecular and structurally organic."
+    },
+    {
+      "id": "ion-channel",
+      "prompt": "Show how a voltage-gated sodium channel opens and closes.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Protein conformational changes matter more than valve hardware analogy."
+    },
+    {
+      "id": "hemoglobin",
+      "prompt": "Explain oxygen binding and cooperativity in hemoglobin.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Subunit-specific molecular geometry and conformational changes."
+    },
+    {
+      "id": "engine",
+      "prompt": "Create an interactive cutaway of a four-stroke combustion engine.",
+      "expected_mode": "MECHANISTIC",
+      "why": "Real engineered mechanism."
+    },
+    {
+      "id": "watch",
+      "prompt": "Show the escapement and springs of a mechanical watch.",
+      "expected_mode": "MECHANISTIC",
+      "why": "Real engineered assembly."
+    },
+    {
+      "id": "abstract",
+      "prompt": "Visualize a token bucket rate limiter as a small physical machine.",
+      "expected_mode": "MECHANISTIC",
+      "why": "Explicit physical analogy to abstract computation."
+    },
+    {
+      "id": "atp-analogy",
+      "prompt": "Draw a simplified turbine/gear analogy for ATP synthase, not a molecular model.",
+      "expected_mode": "MECHANISTIC",
+      "why": "User explicitly requests an analogy; label simplifications."
+    },
+    {
+      "id": "atp-compare",
+      "prompt": "Compare real ATP synthase protein motion with a turbine interpretation using a shared interactive timeline.",
+      "expected_mode": "HYBRID",
+      "why": "Both visual languages explicitly requested; shared state."
+    },
+    {
+      "id": "microfluidic",
+      "prompt": "Explain a lab-on-chip system with pumps, channels and living organoids.",
+      "expected_mode": "HYBRID",
+      "why": "Engineered substrate plus biological specimen."
+    },
+    {
+      "id": "mitochondrion",
+      "prompt": "Show mitochondrial cristae and ATP synthase molecules embedded within them.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Membrane topology and proteins are real biological structures."
+    },
+    {
+      "id": "cell-secretion",
+      "prompt": "Show ER-to-Golgi secretion inside an animal cell.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Organic compartments, budding and membrane fusion."
+    },
+    {
+      "id": "tissue",
+      "prompt": "Explain an organoid folding as its cells contract and rearrange.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "Cell/tissue material organization; no need for atomic proteins."
+    },
+    {
+      "id": "bio-historical",
+      "prompt": "My old ATP drawing looks too much like a gear mechanism. Improve its organic molecular fidelity while retaining the controls.",
+      "expected_mode": "BIOLOGICAL",
+      "why": "User explicitly corrects unsuitable legacy style; preserve interactions not machine appearance."
+    },
+    {
+      "id": "bio-abstract-request",
+      "prompt": "I only need a simple block diagram of an ATP-powered ion pump, not its molecular anatomy.",
+      "expected_mode": "MECHANISTIC",
+      "why": "Explicit explanatory schematic, correctly labeled as abstraction."
+    }
+  ]
+}

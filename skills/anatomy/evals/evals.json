@@ -116,6 +116,49 @@
       "files": [
         "examples/atp-synthase/atp-synthase.html"
       ]
+    },
+    {
+      "id": 20,
+      "prompt": "Use Anatomy to explain ATP synthase. Make it look like the actual protein with richly differentiated subunits, bilayer embedding, coordinated rotation and conformational change; optionally compare to a simplified motor.",
+      "expected_output": "Select BIOLOGICAL by default; recognize that a molecular motor is not an engineered metal device. Attempt to ground surfaces in an organism-specific structural assembly or explicitly label organic geometry schematic. Distinguish experimentally sampled states from illustrative interpolation. Allow distinct persistent subunit colours, real domain/pocket movement, linked controls, and genuine inspection. If offering HYBRID, use registered shared state and clear abstraction labels; do not force a comparison if unnecessary. Scientific and visual gates assessed separately using molecular-rendering.md.",
+      "files": [
+        "references/representation-routing.md",
+        "references/molecular-rendering.md"
+      ]
+    },
+    {
+      "id": 21,
+      "prompt": "Use Anatomy to create an interactive combustion engine with cutaways and synchronized moving pistons.",
+      "expected_output": "Select MECHANISTIC, preserve true engineering geometry, moving part constraints and interfaces; no artificial soft organic distortions or random protein-like surfaces.",
+      "files": [
+        "references/representation-routing.md"
+      ]
+    },
+    {
+      "id": 22,
+      "prompt": "Show ATP synthase first as an organic molecular surface and then as a synchronized simplified turbine model, with a reveal slider and the same controls.",
+      "expected_output": "Select HYBRID for an explicitly comparative teaching goal; two representations share camera, rotor axis, phase, proton events and catalytic states. The molecular side uses organic chain/domain geometry and faithful colour, the turbine view is labelled analogy. One state model and coherent step/seek/pause across both; a mere cosmetic texture wipe is insufficient.",
+      "files": [
+        "references/representation-routing.md",
+        "references/molecular-rendering.md"
+      ]
+    },
+    {
+      "id": 23,
+      "prompt": "Make a clear simple gear analogy for ATP synthase. Do not model the molecular surface.",
+      "expected_output": "Select MECHANISTIC analogy because the user explicitly asks for it, but preserve real biologic mechanism at the level asserted and label the depiction schematic. Do not insist on a biological molecule surface that was not requested.",
+      "files": [
+        "references/representation-routing.md"
+      ]
+    },
+    {
+      "id": 24,
+      "prompt": "Teach the transport and folding of a secretory protein within the ER-Golgi system and show what changes physically at the membranes.",
+      "expected_output": "Select BIOLOGICAL multiscale; draw continuous curved membranous compartments, volume-correct cargo containment and actual budding/fusion interfaces. Do not force molecular atom surface details or engineered-machine styling.",
+      "files": [
+        "references/representation-routing.md",
+        "references/biological-figures.md"
+      ]
     }
   ]
 }

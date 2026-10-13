@@ -1,7 +1,7 @@
 {
   "name": "anatomy",
-  "version": "0.5.0",
-  "description": "Create polished interactive isometric diagrams and mechanism-led scientific explainers with accuracy, motion, and visual verification.",
+  "version": "0.6.0",
+  "description": "Automatically choose biological molecular, mechanistic engineered, or hybrid interactive visualizations for scientific explanations.",
   "author": {
     "name": "Anatomy contributors"
   },
@@ -18,16 +18,17 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Anatomy",
-    "shortDescription": "Craft interactive isometric mechanism explainers",
-    "longDescription": "Illustrate real mechanisms and scientific structures with carefully constructed geometry, process-led animation, accessibility, scientific accuracy, visual comparisons, and evidence-based evaluation. Includes the original Anatomy kit and examples.",
+    "shortDescription": "Explore biological or mechanical mechanisms",
+    "longDescription": "Task-adaptive organic molecular models, engineered mechanisms, and synchronized biological/mechanical comparisons. Includes richly coloured molecular surfaces, meaningful animation, factual provenance, and interactive exploration.",
     "developerName": "Anatomy contributors",
     "category": "Productivity",
     "capabilities": [
       "Interactive"
     ],
     "defaultPrompt": [
-      "Use Anatomy to create an interactive isometric explanation of ATP synthase.",
-      "Create an interactive isometric explanation of a four-stroke combustion engine."
+      "Use Anatomy to explain ATP synthase with biologically realistic protein shapes and motion.",
+      "Use Anatomy to show how a combustion engine works.",
+      "Compare the biological and mechanical views of a molecular motor."
     ],
     "composerIcon": "./assets/icon.svg",
     "logo": "./assets/icon.svg"

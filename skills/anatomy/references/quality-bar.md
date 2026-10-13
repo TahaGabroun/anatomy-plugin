@@ -1,10 +1,10 @@
 # Quality bar from the Claude gallery
 
-Read `gallery-lessons.md` for observed examples and the design/completion gates. Use this checklist during visual acceptance. Keep the original kit and its light palette; do not replace its material ramps with broad foreground/background mixes.
+Read `gallery-lessons.md` for observed examples and the design/completion gates. Use this checklist during visual acceptance. Keep the original kit intact, but select visual materials with `representation-routing.md`. Its neutral shaded solids suit engineered parts; **a molecular subject may need organically irregular subunit surfaces, richer chain-specific colours and conformational motion**. Do not transfer a machine palette onto a protein simply because the kit offers it.
 
 ## Benchmarks
 
-For a dense biological/molecular motor, inspect the bundled [ATP synthase predecessor](../examples/atp-synthase/atp-synthase.html) and [benchmark notes](atp-benchmark.md). It exemplifies fine mechanical construction and scientific-subsystem exploration preferred by a user over a later, more infographic-like revision. Treat it as a visual/interactivity benchmark, not a factual ground truth or reusable biological geometry.
+For a molecular motor, consult `molecular-rendering.md` first, then inspect the bundled [ATP synthase predecessor](../examples/atp-synthase/atp-synthase.html) and [benchmark notes](atp-benchmark.md). It exemplifies fine mechanical construction and scientific-subsystem exploration preferred by a user over a later, more infographic-like revision. Treat it as an **engineering-style construction and interaction** benchmark, not biological-fidelity ceiling, factual ground truth, or reusable atomistic geometry. The user-supplied Claude video observed in October 2026 shows a richer molecular style and a biology/mechanics comparison; its visual qualities are described in `molecular-rendering.md`, but the footage is not distributed.
 
 
 Treat gallery links as optional visual references. If access fails, use the bundled examples and state what was actually inspected. Do not delay a build indefinitely to fetch a benchmark.
@@ -24,7 +24,7 @@ When available, consult the author's [making-of](https://skills.wheresryan.sh/an
 
 Before geometry, write four short answers in the task notes:
 
-1. What real object or specimen should the reader recognise immediately?
+1. What real object or specimen should the reader recognise immediately, and is BIOLOGICAL, MECHANISTIC or HYBRID the correct visual model?
 2. What relationship must be visible without reading a paragraph?
 3. What does the primary interaction physically change?
 4. What does the same model update in the motion, selected state, and readout?
@@ -49,7 +49,7 @@ For an abstract concept, invent the physical mechanism. For a real engine, cell,
 
 **Normal size:** identify the subject, focal structure, and current action immediately. Keep outlines delicate, shade ramps close, contact shadows soft, and silhouettes clear. Leave space for the primary mechanism, not empty padding or a dashboard.
 
-**Close-up:** inspect each selected subsystem, membrane or wall thickness, joints, openings, texture endings, and surface curvature. Add detail that distinguishes the real structure, not dots or grooves that merely occupy blank space.
+**Close-up:** inspect each selected subsystem, membrane or wall thickness, joints/openings where appropriate, protein-protein interfaces, texture endings, and surface curvature. In molecular mode, inspect *irregular protein volumes and changing domain interfaces*, not just smooth decorative solids. Add detail that distinguishes the real structure, not dots or grooves that merely occupy blank space.
 
 **Phone:** preserve a useful overview and offer a native selection or focus control. Move the camera to a selected subsystem or show a larger detail when important features become too small. Do not solve a phone layout by reducing readable text or effective targets.
 
