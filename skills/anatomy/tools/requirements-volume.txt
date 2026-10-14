@@ -1,0 +1,7 @@
+numpy>=1.26,<3
+scikit-image>=0.22,<1
+trimesh>=4,<5
+tifffile>=2024.2.12
+mrcfile>=1.4,<2
+# optional for Zarr arrays:
+# zarr>=2.18,<4

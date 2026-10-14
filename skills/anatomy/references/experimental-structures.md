@@ -1,3 +1,5 @@
+> **Cell/organelle microscopy scope:** This document covers atomic PDB assemblies. For volumetric EM organelle masks, voxel scale, segmentation, GLB surfaces, visualization and per-specimen provenance read [organelle-geometry-and-volumes.md](organelle-geometry-and-volumes.md). The existence of a microscopy dataset is not proof that current artwork imported its actual voxels.
+
 # Experimental structures: evidence-first Anatomy
 
 Use when the user asks for an actual molecular assembly, atomic/backbone detail, or biologically plausible structural conformation. **The existence of a PDB entry alone does not mean the current illustration uses its coordinates.** This guide converts a documented biological representation into a reproducible geometry workflow.

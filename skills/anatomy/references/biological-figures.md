@@ -1,3 +1,5 @@
+> **v0.9 required:** For organelles and cells, read [experimental organelle volumes](organelle-geometry-and-volumes.md) and [professional art direction](professional-art-direction.md). Use calibrated real masks when available; distinguish composited reconstructions from same-specimen geometry. A toy-like collection of organelle symbols is a failed finished deliverable.
+
 # Biological and scientific structures
 
 Read this when illustrating a cell, tissue mechanism, organelle, molecule, or other real scientific structure. Use `quality-bar.md` for the visual review. A biological figure depicts a biological physical specimen, not a metaphorical factory or a clinical atlas. For a molecular subject, **first choose BIOLOGICAL or HYBRID** using `representation-routing.md`, then apply `molecular-rendering.md` for molecular surfaces, assemblies, colour and conformation.

@@ -1,3 +1,5 @@
+> **v0.9 addendum:** Mode routing must also choose *geometry source*: experimental PDB for molecules; segmented electron-microscopy volume for available organelles; literature-based reconstruction when absent; calibrated mechanical CAD where appropriate. Every mode passes the independent [professional-design quality gate](professional-art-direction.md). For cell/tissue use [organelle volume guide](organelle-geometry-and-volumes.md).
+
 # Choose the visual representation from the task
 
 **This is a mandatory pre-build decision, not a default illustration style.** Anatomy explains causal mechanisms in every mode, but not every subject should be *depicted as a machine*. “Mechanistic explanation” describes the causal lesson, not a requirement for mechanical-looking geometry. Infer the most useful *representation* from the object's actual physical nature, the requested learning outcome, the audience and any source constraints.

@@ -1,3 +1,25 @@
+# Anatomy for ChatGPT and Codex — v0.9.0
+
+## v0.9.0: professional scientific art direction + real volumetric cell data
+
+**Release goal:** Every task, biological or mechanical, must meet independently reviewed professional scientific/technical illustration standards; no cartoon-looking organelle stand-ins, misleading PDB/EM geometry claims or dashboard-first substitutes. This is an enforceable design-review workflow, not an automatic guarantee of artistic quality.
+
+- **New real-volume ingestion:** [`organelle_volume.py`](skills/anatomy/tools/organelle_volume.py) loads spatially calibrated labelled ZYX `.npy`, `.npz`, OME-TIFF/TIFF, MRC and Zarr (optional), exports 3D marching-cubes **GLB meshes** and portable sampled volume **JSON**. Labels, scale, axes, data SHA-256 and verification limitations are preserved. No real microscopy dataset is bundled.
+- **New volumetric viewer:** [`Volume Atlas`](skills/anatomy/examples/volume-atlas/volume-atlas.html) renders labelled voxels via WebGL2 3D texture ray marching, orbit/cutaway/opacity controls; **calibrated orthogonal-slice fallback** works without WebGL. Its included demo dataset is **SYNTHETIC TEST-ONLY**, not an animal-cell reference. See [volume guidelines](skills/anatomy/references/organelle-geometry-and-volumes.md).
+- **Hard art-direction gate:** Read [professional-art-direction.md](skills/anatomy/references/professional-art-direction.md) for specimen-first composition, refined lighting/materials/typography, required render reviews, mobile checks and design non-regression; failure in anatomy/construction/professional visual craft cannot be offset by passing code tests.
+- **Benchmarks:** Retain approved ATP v0.6, experimental hybrid v0.8; archive a previous animal-cell illustration as **transitional schematic** (not accepted experimental/visual gold). Include new evaluation specifications, regression tests, and optional test dependencies.
+
+**Quick start:**
+
+```bash
+python3 -m pip install -r skills/anatomy/tools/requirements-volume.txt
+python3 skills/anatomy/tools/organelle_volume.py --input segmented.ome.tif --kind labels --output segment.volume.json --mesh-output segment.glb
+```
+
+Open the standalone Volume Atlas HTML and choose the generated JSON. For uncalibrated arrays, explicitly supply `--voxel-size-nm X Y Z`; never invent scale.
+
+---
+
 # Anatomy for ChatGPT and Codex — v0.8.0
 
 An unofficial ChatGPT/Codex adaptation of [Ryan’s Anatomy](https://github.com/wheresryan22/anatomy), with the original MIT attribution preserved. Creates detailed interactive isometric illustrations of real mechanisms, including scientific cutaways and mechanism-led animations. It is **not** a diagnostic imaging system or clinical anatomy atlas.

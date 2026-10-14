@@ -1,3 +1,5 @@
+> **v0.9 mandatory quality gate:** Apply [professional art direction](professional-art-direction.md) to *every* mode and benchmark. The original gallery examples are inspirations, not a substitute for actual screenshot inspection and specialist reference comparisons. For cell geometry also read [organelle volumes](organelle-geometry-and-volumes.md).
+
 # Quality bar from the Claude gallery
 
 Read `gallery-lessons.md` for observed examples and the design/completion gates. Use this checklist during visual acceptance. Keep the original kit intact, but select visual materials with `representation-routing.md`. Its neutral shaded solids suit engineered parts; **a molecular subject may need organically irregular subunit surfaces, richer chain-specific colours and conformational motion**. Do not transfer a machine palette onto a protein simply because the kit offers it.

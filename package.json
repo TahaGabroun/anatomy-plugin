@@ -1,9 +1,9 @@
 {
   "name": "anatomy-plugin",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "type": "module",
-  "description": "Anatomy skill distribution for ChatGPT and Codex",
+  "description": "Experimental molecular and volumetric organelle visualization with professional illustration review",
   "license": "MIT",
   "engines": {
     "node": ">=20.10.0"
@@ -11,6 +11,7 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "package": "npm run validate && python3 scripts/package.py"
+    "package": "npm run validate && python3 scripts/package.py",
+    "test:volume": "python3 -m unittest discover -s skills/anatomy/tools -p test_organelle_volume.py && node --test skills/anatomy/scripts/professional-contract.test.mjs"
   }
 }

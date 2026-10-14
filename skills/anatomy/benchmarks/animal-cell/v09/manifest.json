@@ -1,0 +1,9 @@
+{
+  "benchmark": "animal-cell-v09-transitional",
+  "status": "ARCHIVED_SCHEMATIC_NOT_APPROVED_GOLD_STANDARD",
+  "description": "Archived prior professional-layout prototype. It remains procedural and ungrounded in segmented microscopy. Use as a baseline for preserving navigation and coherent explanations, not a ceiling on organelle morphology or design.",
+  "file": "Animal_Cell_Anatomy_Professional.html",
+  "sha256": "7004889ca545d428cd72ce9607f28ab8657db771cd62474d7872b8456ddebda2",
+  "visual_acceptance": "requires manual comparison and review; source hash does not verify quality",
+  "exclusions": ["experimental microscopy-derived organelle geometry", "user-approved professional-art benchmark"]
+}

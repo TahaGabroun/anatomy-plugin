@@ -1,0 +1,26 @@
+name: Anatomy integrity and geometry checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install volumetric dependencies
+        run: python -m pip install -r skills/anatomy/tools/requirements-volume.txt gemmi
+      - name: Validate distribution integrity
+        run: npm run validate
+      - name: Run model, provenance and geometry tests
+        run: npm run smoke
+      - name: Check volume importer CLI
+        run: python skills/anatomy/tools/organelle_volume.py --help
+      - name: Verification note
+        run: echo 'Automated tests do not certify illustration quality. Perform specialist review against references and real-browser render testing before claiming professional visual fidelity.'

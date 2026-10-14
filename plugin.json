@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "anatomy",
-  "version": "0.8.0",
-  "description": "Automatically choose biological molecular, mechanistic engineered, or hybrid interactive visualizations for scientific explanations.",
+  "version": "0.9.0",
+  "description": "Evidence-grounded interactive scientific and engineering visualization with professional art-direction standards.",
   "author": {
     "name": "Anatomy contributors"
   },
@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "Anatomy",
         "shortDescription": "Explore biological or mechanical mechanisms",
-        "longDescription": "Task-adaptive organic molecular models, engineered mechanisms, and synchronized biological/mechanical comparisons. Includes richly coloured molecular surfaces, meaningful animation, factual provenance, and interactive exploration.",
+        "longDescription": "Evidence-grounded molecular/volumetric scientific visualization with professional art direction and interactive structure exploration.",
         "developerName": "Anatomy contributors",
         "category": "Productivity",
         "capabilities": [
@@ -30,7 +30,8 @@
         "defaultPrompt": [
           "Use Anatomy to explain ATP synthase with biologically realistic protein shapes and motion.",
           "Use Anatomy to show how a combustion engine works.",
-          "Compare the biological and mechanical views of a molecular motor."
+          "Compare the biological and mechanical views of a molecular motor.",
+          "Use Anatomy to import segmented organelles and visualize their 3D morphology."
         ],
         "composerIcon": "./assets/icon.svg",
         "logo": "./assets/icon.svg"

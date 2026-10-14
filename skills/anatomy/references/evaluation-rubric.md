@@ -1,3 +1,5 @@
+> **v0.9 noncompensatory additions:** Score source/geometry authenticity and professional visual craft independently. Real cellular volume requires calibrated segmentation or explicitly disclosed reconstruction. A polished dashboard cannot compensate for crude organelle geometry; a beautiful invented model cannot compensate for fabricated measurement. Follow [professional art direction](professional-art-direction.md) and [volume evidence rules](organelle-geometry-and-volumes.md). Browser/WebGL rendering must be tested on an actual compatible runtime before claiming success.
+
 # Evaluate outputs, not instruction wording
 
 Use representative tasks in `../evals/evals.json`. For a before/after comparison, give both versions the same request, tools, model, budget, and source access in separate workspaces. Record those conditions. A model-name claim or a single successful artifact does not demonstrate general superiority.
