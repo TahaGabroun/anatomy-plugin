@@ -1,0 +1,31 @@
+{
+  "benchmark_id": "ATP-SYNTHASE-V08-EXPERIMENTAL-COORDINATES",
+  "version": "0.8.0",
+  "status": "STRUCTURE_DERIVED_HYBRID_CANDIDATE",
+  "pdb_id": "8H9S",
+  "reported_resolution_angstrom": 2.53,
+  "input_mmcif_gz_sha256": "04a25a99eed85038da529bfe7c14504f574e5d73157a71e6877166fb83995d25",
+  "input_entry_id": "XXXX",
+  "identity_status": "USER_SUPPLIED_TITLE_MATCH_ID_UNVERIFIED",
+  "source_note": "User-supplied file titled Human ATP synthase state 1 (combined); entry identifier is XXXX. Coordinate origin has not been independently verified against wwPDB hash.",
+  "render_point_count": 7546,
+  "protein_chain_count": 28,
+  "html_sha256": "425b8cf5368c545733e57b706d544c4bdc6cd8b69c5167008cdb7d3fcf95a96a",
+  "data_sha256": "afca0f76722ac8ca91afc16c40e282ebc765661d562e547438e6b1042813082b",
+  "locked_v06_sha256": "364ddb139d4a8eb4923c315714a7755b76884133f41022bf442b4f25fb44bbbd",
+  "render_type": "subsampled heavy-atom-centred shaded spheres; NOT computed solvent-accessible molecular surface",
+  "motion_type": "pedagogical rigid rotor and shaft rotation plus small illustrative beta-domain deformation; NOT time-resolved structural trajectory",
+  "preserves": [
+    "protein/compare/machine modes",
+    "interactive split",
+    "play/pause",
+    "scrubbing",
+    "45/120-degree steps",
+    "proton/ATP counters",
+    "cutaway",
+    "separation",
+    "component and chain isolation",
+    "mobile layout"
+  ],
+  "build_command": "python3 skills/anatomy/tools/build_atp_8h9s.py --input 8h9s-assembly1.cif.gz --template skills/anatomy/benchmarks/atp-synthase/v06/ATP_Synthase_Anatomy_v06.html --output skills/anatomy/benchmarks/atp-synthase/v08/ATP_Synthase_Anatomy_Experimental_8H9S.html --data-output skills/anatomy/benchmarks/atp-synthase/v08/8h9s-render-data.json"
+}

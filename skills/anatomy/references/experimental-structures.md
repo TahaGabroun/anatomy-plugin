@@ -32,7 +32,7 @@ python3 skills/anatomy/tools/structure_import.py \
   --output atp-8h9s-backbone.json
 ```
 
-For a local file the tool cannot independently establish the biological assembly identity and **must show “INPUT_FILE_UNVERIFIED”**; verify the downloaded filename/source and structure record before drawing assembly-level biological conclusions. `8H9S` experimental coordinates are **not shipped** with this plugin because the download was unavailable during release preparation. Source coordinates must be fetched or provided; the benchmarked v0.6 illustrative artwork does not silently become experimental.
+For a local file the tool cannot independently establish the biological assembly identity and **must show “INPUT_FILE_UNVERIFIED”**; verify the downloaded filename/source and structure record before drawing assembly-level biological conclusions. In v0.7, coordinates were **not shipped**. In v0.8, an interactive ATP synthase example includes 7,546 atom-centred display points extracted from a user-supplied assembly, with an explicit unverified file-entry-ID flag; see [the v0.8 integration guide](atp-8h9s-integration.md). The original compressed mmCIF is not included in the GitHub repository. Source coordinates must be fetched or provided; the benchmarked v0.6 illustrative artwork does not silently become experimental.
 
 ## Motion: no invented structural trajectories
 

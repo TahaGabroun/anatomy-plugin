@@ -1,6 +1,15 @@
-# Anatomy for ChatGPT and Codex — v0.7.0
+# Anatomy for ChatGPT and Codex — v0.8.0
 
 An unofficial ChatGPT/Codex adaptation of [Ryan’s Anatomy](https://github.com/wheresryan22/anatomy), with the original MIT attribution preserved. Creates detailed interactive isometric illustrations of real mechanisms, including scientific cutaways and mechanism-led animations. It is **not** a diagnostic imaging system or clinical anatomy atlas.
+
+## What changed in v0.8.0
+
+**Real experimental coordinates now drive the biological view of ATP synthase.** The standalone [ATP synthase experimental hybrid](skills/anatomy/benchmarks/atp-synthase/v08/ATP_Synthase_Anatomy_Experimental_8H9S.html) is a self-contained HTML model, derived from a user-supplied human ATP synthase state-1 mmCIF assembly associated with PDB 8H9S. The file supplies 28 protein chains, 7,546 sampled heavy-atom-centred display points, and bound ATP/ADP positions. The molecular geometry **replaces** the earlier procedural protein model by default; an Illustrated switch allows direct comparison. Protein / Compare / Machine views, synchronized rotation, interactive separator, cutaway, exploded view, component inspection and mobile controls remain intact.
+
+- **Reproducible builder:** `skills/anatomy/tools/build_atp_8h9s.py` extracts deposited heavy-atom coordinates and writes the portable HTML plus compact embedded coordinate JSON. Python dependencies: `gemmi numpy scipy`. The raw input is not checked into the repository.
+- **Provenance caution:** The user-supplied mmCIF file has the expected title and chain composition but its internal entry ID is `XXXX`. Its identity was **not independently authenticated** against an official archive hash; the input SHA-256 is recorded. The reported 2.53 Å resolution is from the RCSB record.
+- **Motion is illustrative:** c₈ ring and central stalk rotate as rigid units around the measured c-ring axis; small β-domain deformation, proton trajectories and ATP release timing are teaching animations, not observed trajectories or molecular dynamics. The displayed spheres are **atom-centred**, not a computed solvent-accessible surface.
+- **Benchmarks preserved:** v0.6 remains byte-for-byte locked. v0.8 adds its own coordinate/provenance/interaction contracts. See [v0.8 integration guide](skills/anatomy/references/atp-8h9s-integration.md) and [v0.8 manifest](skills/anatomy/benchmarks/atp-synthase/v08/manifest.json).
 
 ## What changed in v0.7.0
 
@@ -18,7 +27,7 @@ python3 -m pip install gemmi
 python3 skills/anatomy/tools/structure_import.py --fetch-id 8H9S --assembly 1 --output atp-8h9s-backbone.json
 ```
 
-Open `skills/anatomy/examples/structure-viewer/structure-viewer.html` in a browser and select that JSON. The 8H9S coordinates are **not bundled** in this version because the structural archive could not be retrieved in this execution environment. See [experimental structures](skills/anatomy/references/experimental-structures.md) and [source provenance](skills/anatomy/references/provenance-and-disclosure.md). Source record: [RCSB 8H9S](https://www.rcsb.org/structure/8H9S) and [PDBj assembly download](https://pdbj.org/mine/resources/8h9s).
+Open `skills/anatomy/examples/structure-viewer/structure-viewer.html` in a browser and select that JSON. In v0.7 the 8H9S coordinates were **not bundled**; v0.8 now embeds derived display coordinates from a user-supplied assembly in the ATP example, while the original raw input remains separate. See [experimental structures](skills/anatomy/references/experimental-structures.md) and [source provenance](skills/anatomy/references/provenance-and-disclosure.md). Source record: [RCSB 8H9S](https://www.rcsb.org/structure/8H9S) and [PDBj assembly download](https://pdbj.org/mine/resources/8h9s).
 
 ## What changed in v0.6.0
 
@@ -69,11 +78,11 @@ npm run smoke
 npm run package
 ```
 
-`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the model tests, the locked v0.6 ATP benchmark, the structural parser tests and adaptive-mode evaluation fixture integrity (not a claim that an AI model passed those prompts). Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
+`validate` checks version coherence, reference paths, asset presence and the SHA-256 manifest; `smoke` exercises the model tests, the locked v0.6 and coordinate-derived v0.8 ATP benchmarks, the structural parser tests and adaptive-mode evaluation fixture integrity (not a claim that an AI model passed those prompts). Additional browser-dependent tests are available in `skills/anatomy/scripts/`. They require a headless Chrome/Chromium environment that permits navigating local files.
 
 ## Layout
 
-- `skills/anatomy/` — complete v0.7.0 skill, example source/output, v0.6 ATP benchmark, real-coordinate importer/viewer, kit, references, and tests.
+- `skills/anatomy/` — complete v0.8.0 skill, example source/output, v0.6 ATP benchmark, real-coordinate importer/viewer, kit, references, and tests.
 - `plugin.json`, `.codex-plugin/plugin.json` — portable plugin and compatibility metadata.
 - `.agents/plugins/marketplace.json` — local marketplace registry.
 - `source-snapshot.json` — hashes of this distribution for integrity verification.
